@@ -3,18 +3,18 @@ public class Human implements Character {
     int xPosition;
     int yPosition;
     String name;
-    static int healthPoints = 50;
-    static int energyPoints = 20;
+    int healthPoints = 50;
+    int energyPoints = 20;
 
     public String getName() {
         return name;
     }
 
-    public static int getHealthPoints() {
+    public  int getHealthPoints() {
         return healthPoints;
     }
 
-    public static int getEnergyPoints() {
+    public int getEnergyPoints() {
         return energyPoints;
     }
 
@@ -31,20 +31,22 @@ public class Human implements Character {
     public int getyPosition() {
         return yPosition;
     }
-    public int increaseHealthPoints(HealthArtifact viata){
-        healthPoints += viata.healthPoints;
+
+    public int increaseHealthPoints(HealthArtifact health){
+        healthPoints += health.healthPoints;
         return healthPoints;
     }
-    public int increaseEnergyPoints(EnergyArtifact energie){
-        energyPoints += energie.energyPoints;
+    public int increaseEnergyPoints(EnergyArtifact energy){
+        energyPoints += energy.energyPoints;
         return energyPoints;
     }
-    public void humanAttack(Monster monstru){
-        Human.energyPoints -=5;
-        Monster.healthPoints -= 10;
+    public void humanAttack(Monster monster, Human human){
+        human.energyPoints -=5;
+        monster.healthPoints -= 10;
     }
-    public void humanAttack(Animal animal){
-        Human.energyPoints -=5;
-        Animal.healthPoints -= 10;
+    public void humanAttack(Animal animal, Human human){
+        human.energyPoints -=5;
+        animal.healthPoints -= 10;
+
     }
 }

@@ -1,5 +1,5 @@
 public interface Character {
-    int increaseHealthPoints(HealthArtifact viata);
-    int increaseEnergyPoints(EnergyArtifact energie);
+    int increaseHealthPoints(HealthArtifact health);
+    int increaseEnergyPoints(EnergyArtifact energy);
 
 }
